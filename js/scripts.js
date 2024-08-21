@@ -91,3 +91,18 @@ $(document).on('click', 'a[href^="#"]', function (event) {
         scrollTop: $($.attr(this, 'href')).offset().top -60
     }, 500);
 });
+
+// pdf
+// scripts.js
+document.getElementById('pdf-filter').addEventListener('change', function() {
+    const filterValue = this.value;
+    const pdfItems = document.querySelectorAll('.pdf-item');
+
+    pdfItems.forEach(item => {
+        if (filterValue === 'todos' || item.getAttribute('data-category') === filterValue) {
+            item.style.display = 'block';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+});
