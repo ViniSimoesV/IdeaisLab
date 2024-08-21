@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notícias</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+background-color: #FFF;
+        }
+
+        header {
+            background-color: #0492C2;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        header input, header select {
+            margin: 10px 5px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        #newsContainer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .newsItem {
+            background-color: #0492C2;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 20px;
+            width: calc(33% - 40px);
+            box-sizing: border-box;
+        }
+
+        .newsItem h2 {
+ color: #fff34a; /* Cor dos cabeçalhos */
+            font-size: 20px;
+            margin-top: 0;
+        }
+ .newsItem img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+
+        .newsItem p {
+            font-size: 16px;
+            color: #FFF;
+        }
+
+        .newsItem button {
+            background-color: #007BFF;
+            border: none;
+            color: #fff;
+            padding: 10px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .newsItem button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Notícias</h1>
+        <input type="text" id="searchBar" placeholder="Pesquisar notícias...">
+        <select id="filterBar">
+            <option value="all">Todos</option>
+            <option value="politica">Política</option>
+            <option value="esportes">Esportes</option>
+            <option value="tecnologia">Tecnologia</option>
+            <!-- Adicione mais opções de filtros conforme necessário -->
+        </select>
+    </header>
+    <main>
+        <div id="newsContainer">
+            <!-- As notícias serão carregadas aqui -->
+        </div>
+    </main>
+    <script>
+        const newsData = [
+            { id: 1, title: "Notícia de Política 1", category: "politica", content: "Conteúdo da notícia de política 1.",image: "icone.jpg" },
+            { id: 2, title: "Notícia de Esportes 1", category: "esportes", content: "Conteúdo da notícia de esportes 1." },
+            { id: 3, title: "Notícia de Tecnologia 1", category: "tecnologia", content: "Conteúdo da notícia de tecnologia 1." },
+            { id: 4, title: "Notícia de Política 2", category: "politica", content: "Conteúdo da notícia de política 2." },
+            { id: 5, title: "Notícia de Esportes 2", category: "esportes", content: "Conteúdo da notícia de esportes 2." },
+            { id: 6, title: "Notícia de Tecnologia 2", category: "tecnologia", content: "Conteúdo da notícia de tecnologia 2." }
+            // Adicione mais notícias conforme necessário
+        ];
+
+        const newsContainer = document.getElementById('newsContainer');
+        const searchBar = document.getElementById('searchBar');
+        const filterBar = document.getElementById('filterBar');
+
+        function displayNews(news) {
+            newsContainer.innerHTML = '';
+            news.forEach(item => {
+                const newsItem = document.createElement('div');
+                newsItem.classList.add('newsItem');
+                newsItem.innerHTML = `
+                    <h2>${item.title}</h2>
+                    <p>${item.content}</p>
+                    <button onclick="alert('Saiba mais sobre: ${item.title}')">Saiba mais</button>
+                `;
+                newsContainer.appendChild(newsItem);
+            });
+        }
+
+        function filterNews() {
+            const searchTerm = searchBar.value.toLowerCase();
+            const selectedCategory = filterBar.value;
+
+            const filteredNews = newsData.filter(news => {
+                const matchesSearch = news.title.toLowerCase().includes(searchTerm);
+                const matchesCategory = selectedCategory === 'all' || news.category === selectedCategory;
+                return matchesSearch && matchesCategory;
+            });
+
+            displayNews(filteredNews);
+        }
+
+        searchBar.addEventListener('input', filterNews);
+        filterBar.addEventListener('change', filterNews);
+
+        // Inicializa a página com todas as notícias
+        displayNews(newsData);
+    </script>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colaboradores</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+ background-color: #f0f0f0;
+        }
+
+        .collaborator {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 250px;
+            height: 250px;
+            margin: 15px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(90deg, #f0f0f0 50%, #c0c0c0 50%); /* Gradiente de cores */
+        }
+
+        .collaborator:nth-child(odd) {
+            background: linear-gradient(90deg, #e0e0e0 50%, #d0d0d0 50%);
+        }
+
+        .collaborator .image-container {
+            width: 100%;
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #0492C2;
+border: none;
+  
+        }
+
+        .collaborator img {
+            border-radius: 90% ;
+            width: 100px;
+            height: 100px;
+            border: none;
+            object-fit: cover;
+ z-index: 1; /* Garante que a imagem fique acima da borda */
+        }
+
+        .collaborator .info-container {
+            width: 100%;
+            height: 50%;
+            padding: 10px;
+            text-align: center;
+ background: #fff34a;
+        }
+
+        .collaborator h3 {
+            font-size: 18px;
+            margin: 10px 0 5px;
+
+        }
+ h2 {
+    color: #fff34a; /* Cor dos cabeçalhos */
+    background-color: #0492C2;
+    margin: 0 -20px;                     /* Remover margens padrão e expandir para as laterais */
+    padding: 15px 20px;                  /* Adicionar padding para espaço interno */
+    /*width: calc(100% + 40px);          /* Expandir para compensar a margem negativa */
+    /*box-sizing: border-box;            /* Incluir padding e borda na largura total */
+}
+
+        .collaborator p {
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<h2>Colaboradores</h2>
+    <div class="container">
+        <div class="collaborator">
+            <div class="image-container">
+                <img src="icone.jpg" alt="Colaborador 1">
+            </div>
+            <div class="info-container">
+                <h3>Profa. Carolina Resende</h3>
+                <p>PRÓ-REITORIA DE EXTENSÃO </p>
+<p> Pró-Reitora</p>
+            </div>
+        </div>
+        <div class="collaborator">
+            <div class="image-container">
+                <img src="icone.jpg" alt="Colaborador 2">
+            </div>
+            <div class="info-container">
+                <h3>Prof. José Chequer Neto</h3>
+                <p> DIRETORIA DE INSTITUTO<br> Diretor do ICEG </p><p> Escola de Negócios</p>
+            </div>
+        </div>
+        <div class="collaborator">
+            <div class="image-container">
+                <img src="img1.jpeg" alt="Colaborador 3">
+            </div>
+            <div class="info-container">
+                <h3>Prof. Osvaldo Mauricio de Oliveira</h3>
+                <p> COORDENADOR DOS HUB’s: <br> IDEIASLAB <br>  Hub Central</p>
+            </div>
+        </div>
+       <div class="collaborator">
+            <div class="image-container">
+                <img src="img1.jpeg" alt="Colaborador 3">
+            </div>
+            <div class="info-container">
+                <h3> Profa. Ester Eliane Jeunon</h3>
+                <p>COORDENADOR DOS HUB’s IDEIASLAB <br> Hub Betim </p>
+            </div>
+        </div>
+<div class="collaborator">
+            <div class="image-container">
+                <img src="img1.jpeg" alt="Colaborador 3">
+            </div>
+            <div class="info-container">
+                <h3>Prof. Davidson Campos Soares Barbosa</h3>
+                <p>COORDENADOR DOS HUB’s IDEIASLAB <br> Hub Barreiro </p>
+            </div>
+        </div>
+<div class="collaborator">
+            <div class="image-container">
+                <img src="img1.jpeg" alt="Colaborador 3">
+            </div>
+            <div class="info-container">
+                <h3>Prof. Luciano Fernandes Novaes</h3>
+                <p>COORDENADOR DOS HUB’s IDEIASLAB <br> Hub Contagem </p>
+            </div>
+        </div>
+<div class="collaborator">
+            <div class="image-container">
+                <img src="img1.jpeg" alt="Colaborador 3">
+            </div>
+            <div class="info-container">
+                <h3>Profa. Soraya Cardoso Pongelupe Lopes</h3>
+                <p> COORDENADOR DOS HUB’s IDEIASLAB <br> Hub Coração Eucarístico </p>
+            </div>
+        </div>
+<div class="collaborator">
+            <div class="image-container">
+                <img src="img1.jpeg" alt="Colaborador 3">
+            </div>
+            <div class="info-container">
+                <h3>Prof. Valquíria Bisarro Loureiro</h3>
+                <p> COORDENADOR DOS HUB’s IDEIASLAB <br> Hub Poços de Caldas </p>
+            </div>
+        </div>
+
+<div class="collaborator">
+            <div class="image-container">
+                <img src="img1.jpeg" alt="Colaborador 3">
+            </div>
+            <div class="info-container">
+                <h3>Profa. Simone Fernandes Queiroz</h3>
+                <p>  COORDENADOR DOS HUB’s IDEIASLAB <br> Hub Praça da Liberdade </p>
+            </div>
+        </div>
+<div class="collaborator">
+            <div class="image-container">
+                <img src="img1.jpeg" alt="Colaborador 3">
+            </div>
+            <div class="info-container">
+                <h3>Profa. Soraya Cardoso Pongelupe Lopes</h3>
+                <p> COORDENADOR DOS HUB’s IDEIASLAB <br> Hub São Gabriel  </p>
+            </div>
+        </div>
+<div class="collaborator">
+            <div class="image-container">
+                <img src="img1.jpeg" alt="Colaborador 3">
+            </div>
+            <div class="info-container">
+                <h3>Profa. Soraya Cardoso Pongelupe Lopes</h3>
+                <p> COORDENADOR DOS HUB’s IDEIASLAB <br> Hub PUC Virtual  </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
